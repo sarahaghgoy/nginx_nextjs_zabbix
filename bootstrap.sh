@@ -22,5 +22,5 @@ docker compose up -d
 
 
 #Install Zabbix
-
-./Zabbix-setup/setup.sh
+cd ../Zabbix-setup/
+./setup.sh

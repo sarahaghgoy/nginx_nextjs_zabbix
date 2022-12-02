@@ -33,8 +33,9 @@ cp nginx.conf  /etc/nginx/nginx.conf
 cp default /etc/nginx/sites-available/default
 rm /etc/nginx/sites-enabled/*
 ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
-
+rm /etc/nginx/conf.d/zabbix.conf
 
 #Restart Services
 systemctl restart zabbix-server zabbix-agent nginx php7.4-fpm
 systemctl enable zabbix-server zabbix-agent nginx php7.4-fpm
+rm zabbix-release_6.2-4+debian11_all.deb 
