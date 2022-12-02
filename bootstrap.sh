@@ -25,3 +25,7 @@ docker compose up -d
 #Install Zabbix
 cd ../Zabbix-setup/
 ./setup.sh
+
+
+#Restart system
+reboot
