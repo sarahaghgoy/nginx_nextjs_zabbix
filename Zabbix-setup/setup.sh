@@ -37,6 +37,9 @@ rm /etc/nginx/conf.d/zabbix.conf
 
 #Add some config on zabbix
 echo "DBPassword=$PASS" >>  /etc/zabbix/zabbix_server.conf
+#zabbix agent2
+echo "Plugins.Docker.Endpoint=unix:///var/run/docker.sock" >> /etc/zabbix/zabbix_agent2.d/plugins.d/docker.conf
+usermod -aG docker zabbix
 
 #Restart Services
 systemctl restart zabbix-server zabbix-agent2 nginx php7.4-fpm
