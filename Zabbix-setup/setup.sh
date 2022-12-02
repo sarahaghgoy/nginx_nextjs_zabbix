@@ -9,7 +9,7 @@ apt-get install wget -y
 wget https://repo.zabbix.com/zabbix/6.2/debian/pool/main/z/zabbix-release/zabbix-release_6.2-4%2Bdebian11_all.deb
 dpkg -i zabbix-release_6.2-4+debian11_all.deb
 apt update -y
-apt install zabbix-server-mysql zabbix-frontend-php zabbix-nginx-conf zabbix-sql-scripts zabbix-agent -y
+apt install zabbix-server-mysql zabbix-frontend-php zabbix-nginx-conf zabbix-sql-scripts zabbix-agent2 -y
 
 #Install mariadb-server
 apt-get install mariadb-server -y
@@ -39,8 +39,8 @@ rm /etc/nginx/conf.d/zabbix.conf
 echo "DBPassword=$PASS" >>  /etc/zabbix/zabbix_server.conf
 
 #Restart Services
-systemctl restart zabbix-server zabbix-agent nginx php7.4-fpm
-systemctl enable zabbix-server zabbix-agent nginx php7.4-fpm
+systemctl restart zabbix-server zabbix-agent2 nginx php7.4-fpm
+systemctl enable zabbix-server zabbix-agent2 nginx php7.4-fpm
 
 #Cleaning up
 rm zabbix-release_6.2-4+debian11_all.deb 
