@@ -25,7 +25,8 @@ docker compose up -d
 #Install Zabbix
 cd ../Zabbix-setup/
 ./setup.sh
-
+systemctl stop apache2
+systemctl disable apache2
 
 #Restart system
 reboot
