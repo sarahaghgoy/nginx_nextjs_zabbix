@@ -20,3 +20,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 cd Docker
 docker compose up -d
 
+
+#Install Zabbix
+
+./Zabbix-setup/setup.sh
