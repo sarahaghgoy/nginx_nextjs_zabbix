@@ -1,17 +1,18 @@
 version: '3'
 services:
-
-  webserver:
-    container_name: frontend-fanap-web
-    image: 47505495e0ee/fanap-frontend-web
+  
+  webserver-time:
+    container_name: time-fanap
+    image: 47505495e0ee/fanap-webserver-time
     restart: always
     ports:
      - "80:80"
     networks:
       fanapnet:
-        ipv4_address: 10.10.34.1
+        ipv4_address: 10.10.34.3
     volumes:
       - fanap-volume:/var/log/nginx/
+  
   nextjs:
     container_name: nextjs-fanap
     image: 47505495e0ee/fanap-nextjs
@@ -19,14 +20,7 @@ services:
     networks:
       fanapnet:
         ipv4_address: 10.10.34.2
-  time:
-    container_name: time-fanap
-    image: 47505495e0ee/fanap-time
-    restart: always
-    networks:
-      fanapnet:
-        ipv4_address: 10.10.34.3
-
+  
 networks:
   fanapnet:
     driver: bridge
